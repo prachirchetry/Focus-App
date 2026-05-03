@@ -1,0 +1,188 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial;
+  color: white;
+  background: radial-gradient(circle at top, #1b2a4a, #070a12);
+  overflow-x: hidden;
+}
+
+/* animated glow background */
+.bg {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 20% 20%, #00ffc833, transparent 40%),
+              radial-gradient(circle at 80% 30%, #00aaff33, transparent 40%),
+              radial-gradient(circle at 50% 80%, #ff00ff22, transparent 40%);
+  filter: blur(40px);
+  z-index: -1;
+  animation: floatbg 10s ease-in-out infinite alternate;
+}
+
+@keyframes floatbg {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+/* TOP BAR */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 25px;
+  font-weight: 600;
+  backdrop-filter: blur(12px);
+}
+
+.user {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.icon-img {
+  width: 24px;
+  height: 24px;
+  filter: drop-shadow(0 0 6px #00ffd0aa);
+}
+
+/* MAIN LAYOUT */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  margin-top: 10px;
+}
+
+/* GLASS CARDS */
+.glass {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 22px;
+  padding: 22px;
+  width: 340px;
+  text-align: center;
+
+  backdrop-filter: blur(18px);
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.4),
+    inset 0 0 20px rgba(255,255,255,0.05);
+
+  transition: 0.25s ease;
+}
+
+.glass:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.5),
+    0 0 20px rgba(0,255,200,0.15);
+}
+
+/* HEADER */
+.header h1 {
+  margin: 0;
+  font-size: 28px;
+  letter-spacing: 1px;
+}
+
+.header p {
+  opacity: 0.6;
+  font-size: 13px;
+}
+
+/* STATS */
+.stats {
+  display: flex;
+  justify-content: space-around;
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+/* TIMER */
+#time {
+  font-size: 64px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-shadow: 0 0 20px rgba(0,255,200,0.2);
+}
+
+/* PROGRESS */
+.progress {
+  width: 100%;
+  height: 10px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 12px 0;
+}
+
+#bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #00ffd0, #0088ff, #ff4df0);
+  box-shadow: 0 0 15px rgba(0,255,200,0.4);
+  transition: width 0.3s ease;
+}
+
+/* BUTTONS */
+button {
+  border: none;
+  cursor: pointer;
+  border-radius: 14px;
+  padding: 10px 14px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* primary buttons */
+.start { background: linear-gradient(135deg,#00c853,#00e676); color: black; }
+.pause { background: linear-gradient(135deg,#ff9800,#ffb74d); color: black; }
+.reset { background: linear-gradient(135deg,#ff1744,#ff5252); color: white; }
+
+/* modes */
+.modes {
+  margin-top: 10px;
+}
+
+.modes button {
+  margin: 4px;
+  background: rgba(255,255,255,0.08);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+}
+
+.modes button:hover {
+  background: rgba(0,255,200,0.15);
+  box-shadow: 0 0 12px rgba(0,255,200,0.2);
+}
+
+/* TASKS */
+.task-card input {
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  width: 70%;
+}
+
+.task-card button {
+  background: linear-gradient(135deg,#00aaff,#00ffd0);
+  color: black;
+}
+
+li {
+  list-style: none;
+  margin: 8px;
+  opacity: 0.8;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+li:hover {
+  color: #00ffd0;
+  transform: translateX(4px);
+}

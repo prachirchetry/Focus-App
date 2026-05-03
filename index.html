@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Focus App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<body onclick="unlockAudio()"></body>
+<div class="bg"></div>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div>⏱ Focus App</div>
+
+  <div class="user">
+    Prachir
+    <img src="hammer.png" class="icon-img">
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="glass header">
+    <h1>Focus App</h1>
+    <p>multi-mode productivity system</p>
+  </div>
+
+  <div class="glass stats">
+    <div>🔥 XP: <span id="xp">0</span></div>
+    <div>📊 Sessions: <span id="sessions">0</span></div>
+    <div id="mode">Mode: Pomodoro</div>
+  </div>
+
+  <!-- TIMER -->
+  <div class="glass timer-card">
+    <h2 id="time">25:00</h2>
+
+    <div class="progress">
+      <div id="bar"></div>
+    </div>
+
+    <div class="buttons">
+      <button onclick="startTimer()" class="start">Start</button>
+      <button onclick="pauseTimer()" class="pause">Pause</button>
+      <button onclick="resetTimer()" class="reset">Reset</button>
+    </div>
+
+    <div class="modes">
+      <button onclick="setMode('pomodoro')">🍅</button>
+      <button onclick="setMode('break')">☕</button>
+      <button onclick="setMode('deep')">🧠</button>
+      <button onclick="setMode('sprint')">⚡</button>
+      <button onclick="setMode('chill')">🌿</button>
+    </div>
+  </div>
+
+  <!-- TASKS -->
+  <div class="glass task-card">
+    <h3>Tasks</h3>
+
+    <input id="taskInput" placeholder="Add task...">
+    <button onclick="addTask()">+</button>
+
+    <ul id="taskList"></ul>
+  </div>
+
+</div>
+
+<!-- AUDIO -->
+<audio id="lofi" loop>
+  <source src="lofi.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="breakMusic" loop>
+  <source src="break.mp3" type="audio/mpeg">
+</audio>
+
+<script src="script.js"></script>
+</body>
+</html>
