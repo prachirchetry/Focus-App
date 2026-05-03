@@ -18,12 +18,6 @@ A modern Pomodoro + productivity web app with multiple focus modes, lofi music, 
 Just open `index.html` in a browser  
 OR host it using Netlify / GitHub Pages
 
----
-
-## 📱 Live Demo
-https://your-link-here.com
-
----
 
 ## 🛠 Tech Stack
 - HTML
